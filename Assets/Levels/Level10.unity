@@ -2258,11 +2258,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7795369956607510998, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6457448
+      value: -4.9887934
       objectReference: {fileID: 0}
     - target: {fileID: 7795369956607510998, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9340968
+      value: -0.9671283
       objectReference: {fileID: 0}
     - target: {fileID: 7795369956607510999, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
       propertyPath: m_WorldUpOverride
@@ -2280,6 +2280,10 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1698828194}
+    - target: {fileID: 7795369957089198119, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.578544
+      objectReference: {fileID: 0}
     - target: {fileID: 7795369957169022324, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
       propertyPath: m_Name
       value: Cameras

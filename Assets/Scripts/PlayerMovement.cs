@@ -131,8 +131,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckDie()
     {
-        if (_bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+        if (_bodyCollider.IsTouchingLayers(LayerMask.GetMask("EnemyBullet")))
         {
+            Debug.Log("Öldüm");
             _isAlive = false;
             // _animator.SetTrigger("Dying");
             // _rigidbody.velocity = deathKick;
@@ -148,11 +149,6 @@ public class PlayerMovement : MonoBehaviour
         if (col.tag.Equals("Finish"))
         {
             SceneManager.LoadScene("Credentials");
-        }
-        
-        if (col.tag.Equals("EnemyBullet"))
-        {
-            CheckDie();
         }
     }
 }

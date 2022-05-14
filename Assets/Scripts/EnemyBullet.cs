@@ -8,6 +8,7 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] float speed = 20f;
 
     private Rigidbody2D _rigidbody;
+    public GameObject enemy;
 
     private float _xSpeed;
     
@@ -16,7 +17,7 @@ public class EnemyBullet : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        _xSpeed = speed;
+        _xSpeed = enemy.transform.localScale.x * speed;
     }
 
     // Update is called once per frame
@@ -27,15 +28,19 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.tag.Equals("Enemy"))
+        if (col.tag.Equals("Player"))
         {
             Destroy(col.gameObject );
+        }
+        
+        if (!col.tag.Equals("Enemy"))
+        {
+            Destroy(gameObject);   
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(col.gameObject.tag);
         if (!col.gameObject.tag.Equals("Enemy"))
         {
             Destroy(gameObject);   

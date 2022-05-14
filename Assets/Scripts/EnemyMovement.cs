@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
     private Collider2D _collider2DForPlayer;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
-    private float _tempMoveSpeed;
     private bool _fire = false;
     
     // Start is called before the first frame update
@@ -22,8 +21,6 @@ public class EnemyMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _collider2DForPlayer = GetComponent<BoxCollider2D>();
-
-        _tempMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -46,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
         while (_fire)
         {
             GameObject bulletObject = Instantiate(bullet, gun.position, transform.rotation * Quaternion.Euler (0f, 0f, 90f));
+            bulletObject.GetComponent<EnemyBullet>().enemy = gameObject;
             yield return new WaitForSeconds(1f);
         }
     } 
@@ -63,7 +61,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Player"))
         {
-            // _tempMoveSpeed = moveSpeed;
             moveSpeed = 0;
             _fire = true;
             StartCoroutine(Fire());
@@ -76,13 +73,13 @@ public class EnemyMovement : MonoBehaviour
         {
             _fire = false;
             StopAllCoroutines();
-            // moveSpeed = _tempMoveSpeed;
+            moveSpeed = 1;
+            FlipEnemyFacing();
         }
     }
 
     private void FlipEnemyFacing()
     {
-        Debug.Log(_rigidbody.velocity.x);
         transform.localScale = new Vector2((Mathf.Sign(moveSpeed)), 1f);   
     }
 }
