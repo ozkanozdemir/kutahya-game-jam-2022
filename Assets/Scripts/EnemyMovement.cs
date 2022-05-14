@@ -32,17 +32,18 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (other.tag.Equals("Wall"))
+        if (col.gameObject.tag.Equals("Wall"))
         {
             moveSpeed = -moveSpeed;
-            FlipEnemyFacing();   
+            FlipEnemyFacing();
         }
     }
 
     private void FlipEnemyFacing()
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(_rigidbody.velocity.x)), 1f);   
+        Debug.Log(_rigidbody.velocity.x);
+        transform.localScale = new Vector2((Mathf.Sign(moveSpeed)), 1f);   
     }
 }
