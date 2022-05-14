@@ -29,15 +29,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Enemy"))
+        if (!col.tag.Equals("Player"))
         {
             Destroy(col.gameObject );
         }
-        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Destroy(gameObject);
+        Debug.Log(col.gameObject.tag);
+        if (!col.gameObject.tag.Equals("Player"))
+        {
+            Destroy(gameObject);   
+        }
     }
 }

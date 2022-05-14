@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         _gravityScaleAtStart = _rigidbody.gravityScale;
         _gameSession = FindObjectOfType<GameSession>();
         _audio = FindObjectOfType<AudioSource>();
+        
+        _animator.SetInteger("Animate", 0);
     }
 
     // Update is called once per frame
@@ -49,14 +51,14 @@ public class PlayerMovement : MonoBehaviour
         ClimbLadder();
         CheckDie();
 
-        if (Mathf.Abs(_rigidbody.velocity.y) > 0 && !_animator.GetBool("isClimbing"))
-        {
-            // _animator.SetBool("isJumping", true);
-        }
-        else
-        {
-            // _animator.SetBool("isJumping", false);
-        }
+        // if (Mathf.Abs(_rigidbody.velocity.y) > 0 && !_animator.GetBool("isClimbing"))
+        // {
+        //     // _animator.SetBool("isJumping", true);
+        // }
+        // else
+        // {
+        //     // _animator.SetBool("isJumping", false);
+        // }
     }
 
     private void OnFire(InputValue value) 
@@ -91,7 +93,14 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = playerVelocity;
         
         bool playerHasHorizontalSpeed = Mathf.Abs(_rigidbody.velocity.x) > Mathf.Epsilon;
-        _animator.SetBool("isRunning", playerHasHorizontalSpeed);
+        if (playerHasHorizontalSpeed)
+        {
+            _animator.SetInteger("Animate", 2);
+        }
+        else
+        {
+            _animator.SetInteger("Animate", 0);
+        }
     }
 
     private void FlipSprite()
@@ -116,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = climbVelocity;
         
         bool playerHasVerticalSpeed = Mathf.Abs(_rigidbody.velocity.y) > Mathf.Epsilon;
-        _animator.SetBool("isClimbing", playerHasVerticalSpeed);
+        // _animator.SetBool("isClimbing", playerHasVerticalSpeed);
         _rigidbody.gravityScale = 0f;
     }
 
@@ -125,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         if (_bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
             _isAlive = false;
-            _animator.SetTrigger("Dying");
+            // _animator.SetTrigger("Dying");
             // _rigidbody.velocity = deathKick;
             
             AudioSource.PlayClipAtPoint(dieClip, transform.position);
