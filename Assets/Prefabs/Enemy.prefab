@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 356066499}
   - component: {fileID: 356066501}
   - component: {fileID: 356066498}
+  - component: {fileID: 356066502}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -303,7 +304,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &356066499
 CapsuleCollider2D:
@@ -318,8 +319,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008417964, y: 0.90486693}
-  m_Size: {x: 1.2069218, y: 1.8192172}
+  m_Offset: {x: -0.022264361, y: 0.90486693}
+  m_Size: {x: 1.1455572, y: 1.8192172}
   m_Direction: 0
 --- !u!95 &356066501
 Animator:
@@ -354,3 +355,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  bullet: {fileID: 8365659701571314964, guid: 63f029d9bf5a14ea0b3451a844243e20, type: 3}
+  gun: {fileID: 664355731338892530}
+--- !u!61 &356066502
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030918340878856859}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.0098906, y: 0.86341834}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.2, y: 1.8}
+    newSize: {x: 1.2, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8377934, y: 1.7268367}
+  m_EdgeRadius: 0
