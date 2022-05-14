@@ -167,7 +167,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 31
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -195,7 +195,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -207,7 +207,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
@@ -231,9 +231,33 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1098,7 +1122,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileSet256x256_39: -2407104575397983873
       TileSet256x256_31: 7066940453793008614
       TileSet256x256_36: -2993157472549268498
       TileSet256x256_37: 7685055610207366036
@@ -1126,15 +1149,16 @@ TextureImporter:
       TileSet256x256_19: -5894831784151659405
       TileSet256x256_20: 3127103059382788031
       TileSet256x256_24: -8483609789811779129
+      TileSet256x256_39: -2407104575397983873
       TileSet256x256_32: -7995945895254628706
       TileSet256x256_15: 7908333503414140737
       TileSet256x256_16: 2922542756775273656
       TileSet256x256_7: -3738815139747884455
-      TileSet256x256_8: 3460960793757996607
       TileSet256x256_10: 431886857440321270
-      TileSet256x256_9: 4770105698851807119
+      TileSet256x256_8: 3460960793757996607
       TileSet256x256_11: -1873201283724493821
       TileSet256x256_30: -3773006571888617512
+      TileSet256x256_9: 4770105698851807119
       TileSet256x256_35: -1562086243882407726
       TileSet256x256_22: 5674862196976794846
       TileSet256x256_1: -8177884460788536640
