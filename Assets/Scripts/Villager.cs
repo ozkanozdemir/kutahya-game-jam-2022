@@ -1,17 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Newsletter : MonoBehaviour
+public class Villager : MonoBehaviour
 {
-    [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject pressEText;
     
+    private GameSession _gameSession;
+    
     private bool _playerTouching;
-    private bool _canvasToggle;
+
+    private void Awake()
+    {
+        _gameSession = FindObjectOfType<GameSession>();
+    }
 
     private void OnTriggerStay2D(Collider2D col)
     {
@@ -27,8 +31,6 @@ public class Newsletter : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             _playerTouching = false;
-            _canvasToggle = false;
-            canvas.SetActive(_canvasToggle);
             pressEText.SetActive(false);
         }
     }
@@ -37,8 +39,10 @@ public class Newsletter : MonoBehaviour
     {
         if (_playerTouching)
         {
-            _canvasToggle = !_canvasToggle;
-            canvas.SetActive(_canvasToggle);
+            // Rehine kurtarıldı
+            
+            // Objeyi 3 saniye sonra yok et
+            Destroy(gameObject, 3f);
         }
     }
 }
