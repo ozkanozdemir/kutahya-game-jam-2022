@@ -17,12 +17,15 @@ public class EnemyBullet : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        _xSpeed = enemy.transform.localScale.x * speed;
+        Debug.Log("enemy.transform.localScale.x : " + enemy.transform.localScale.x);
+        
+        // _xSpeed = enemy.transform.localScale.x * speed;
     }
 
     // Update is called once per frame
     private void Update()
     {
+        _xSpeed = enemy.transform.localScale.x * speed;
         _rigidbody.velocity = new Vector2(_xSpeed, 0f);
     }
 
@@ -33,7 +36,7 @@ public class EnemyBullet : MonoBehaviour
             Destroy(col.gameObject );
         }
         
-        if (!col.tag.Equals("Enemy"))
+        if (!col.tag.Equals("Enemy") && !col.tag.Equals("Environments"))
         {
             Destroy(gameObject);   
         }
@@ -41,7 +44,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (!col.gameObject.tag.Equals("Enemy"))
+        if (!col.gameObject.tag.Equals("Enemy") && !col.gameObject.tag.Equals("Environments"))
         {
             Destroy(gameObject);   
         }

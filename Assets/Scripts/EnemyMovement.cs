@@ -42,7 +42,8 @@ public class EnemyMovement : MonoBehaviour
     {
         while (_fire)
         {
-            GameObject bulletObject = Instantiate(bullet, gun.position, transform.rotation * Quaternion.Euler (0f, 0f, 90f));
+            Debug.Log("Ateş edildi");
+            GameObject bulletObject = Instantiate(bullet, gun.position, transform.rotation);
             bulletObject.GetComponent<EnemyBullet>().enemy = gameObject;
             yield return new WaitForSeconds(1f);
         }
