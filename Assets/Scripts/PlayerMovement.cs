@@ -149,5 +149,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene("Credentials");
         }
+        
+        if (col.tag.Equals("EnemyBullet"))
+        {
+            CheckDie();
+        }
     }
 }

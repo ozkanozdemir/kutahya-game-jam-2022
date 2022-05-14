@@ -1,20 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
-
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
+    
+    private Collider2D _collider2DForPlayer;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
+    private float _tempMoveSpeed;
+    private bool _fire = false;
     
     // Start is called before the first frame update
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _collider2DForPlayer = GetComponent<BoxCollider2D>();
+
+        _tempMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -31,6 +40,15 @@ public class EnemyMovement : MonoBehaviour
             _animator.SetInteger("Animate", 0);
         }
     }
+    
+    private IEnumerator Fire() 
+    {
+        while (_fire)
+        {
+            GameObject bulletObject = Instantiate(bullet, gun.position, transform.rotation * Quaternion.Euler (0f, 0f, 90f));
+            yield return new WaitForSeconds(1f);
+        }
+    } 
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -38,6 +56,27 @@ public class EnemyMovement : MonoBehaviour
         {
             moveSpeed = -moveSpeed;
             FlipEnemyFacing();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("Player"))
+        {
+            // _tempMoveSpeed = moveSpeed;
+            moveSpeed = 0;
+            _fire = true;
+            StartCoroutine(Fire());
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("Player"))
+        {
+            _fire = false;
+            StopAllCoroutines();
+            // moveSpeed = _tempMoveSpeed;
         }
     }
 
