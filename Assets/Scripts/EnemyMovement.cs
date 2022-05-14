@@ -42,7 +42,6 @@ public class EnemyMovement : MonoBehaviour
     {
         while (_fire)
         {
-            Debug.Log("Ateş edildi");
             GameObject bulletObject = Instantiate(bullet, gun.position, transform.rotation);
             bulletObject.GetComponent<EnemyBullet>().enemy = gameObject;
             yield return new WaitForSeconds(1f);
