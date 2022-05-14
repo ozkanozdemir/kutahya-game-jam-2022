@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ToggleNewsLetter",
+                    "name": "EButton",
                     "type": "Button",
                     "id": "28402097-5dad-4848-afc3-59421201911d",
                     "expectedControlType": "Button",
@@ -290,7 +290,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "ToggleNewsLetter",
+                    "action": "EButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4561486514473801603}
   - component: {fileID: 4561486514473801604}
   m_Layer: 5
-  m_Name: ToggleNewsletterText
+  m_Name: PressEText
   m_TagString: ToggleNewsletterText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4561486515587222849}
   - component: {fileID: 4561486515587222850}
   m_Layer: 5
-  m_Name: ToggleNewsletterTextCanvas
+  m_Name: InformationCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
