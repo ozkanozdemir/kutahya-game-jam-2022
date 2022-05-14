@@ -9,6 +9,8 @@ TagManager:
   - EnemyBullet
   - Environments
   - ToggleNewsletterText
+  - Finish1
+  - done
   layers:
   - Default
   - TransparentFX
