@@ -19,7 +19,6 @@ public class Newsletter : MonoBehaviour
         {
             _playerTouching = true;
             toggleNewsletterText.SetActive(true);
-            Debug.Log("1");
         }
     }
 
@@ -31,7 +30,6 @@ public class Newsletter : MonoBehaviour
             _canvasToggle = false;
             canvas.SetActive(_canvasToggle);
             toggleNewsletterText.SetActive(false);
-            Debug.Log("2");
         }
     }
     
