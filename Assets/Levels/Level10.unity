@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 706502794051868592, guid: 12969d48bf83241c1b83669a90d02ea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.608594
+      value: -3.92
       objectReference: {fileID: 0}
     - target: {fileID: 706502794051868592, guid: 12969d48bf83241c1b83669a90d02ea0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2156,6 +2156,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7795369956607510998, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9925604
+      objectReference: {fileID: 0}
     - target: {fileID: 7795369957089198117, guid: 02d70d91bde704894aa53cec484addd2, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
@@ -8883,10 +8887,6 @@ PrefabInstance:
       propertyPath: pressEText
       value: 
       objectReference: {fileID: 1728444537}
-    - target: {fileID: 825099002, guid: 12969d48bf83241c1b83669a90d02ea0, type: 3}
-      propertyPath: pressEText
-      value: 
-      objectReference: {fileID: 1728444537}
     - target: {fileID: 706502794051868592, guid: 12969d48bf83241c1b83669a90d02ea0, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -9042,7 +9042,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 733507448, guid: d8647af2dd37248c5823059c0f485593, type: 3}
-      propertyPath: toggleNewsletterText
+      propertyPath: pressEText
       value: 
       objectReference: {fileID: 1728444537}
     - target: {fileID: 7260192578289874120, guid: d8647af2dd37248c5823059c0f485593, type: 3}

@@ -7,11 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] private int playerLives = 3;
-    [SerializeField] private int score = 0;
+    [SerializeField] private int playerLives = 999;
+    [SerializeField] private int powerUpAmount = 3;
+    [SerializeField] private int score;
+    [SerializeField] private int powerUp;
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI powerUpText;
     [SerializeField] private Canvas canvas;
+
+    private bool _powerUpFulled;
 
     private void Awake()
     {
@@ -29,8 +34,9 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
-        livesText.text = playerLives.ToString();
+        // livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
+        powerUpText.text = powerUp.ToString();
     }
 
     private void Update()
@@ -63,6 +69,18 @@ public class GameSession : MonoBehaviour
         scoreText.text = score.ToString();
     }
     
+    public void AddToPowerUp(int value)
+    {
+        powerUpAmount = Mathf.Max(powerUp - value, 0);
+        powerUp += value;
+        powerUpText.text = powerUp.ToString();
+    }
+
+    public void SavedVillager()
+    {
+        AddToPowerUp(1);
+    }
+    
     public void ResetScore()
     {
         score += 0;
@@ -88,7 +106,9 @@ public class GameSession : MonoBehaviour
     {
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         score = 0;
+        powerUp = 0;
         scoreText.text = score.ToString();
+        scoreText.text = powerUp.ToString();
         
         SceneManager.LoadScene(0);
         Destroy(gameObject);

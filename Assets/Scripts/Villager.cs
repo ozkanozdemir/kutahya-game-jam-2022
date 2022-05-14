@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class Villager : MonoBehaviour
 {
     [SerializeField] private GameObject pressEText;
+    [SerializeField] private GameObject canvas;
     
     private GameSession _gameSession;
     
@@ -37,11 +38,14 @@ public class Villager : MonoBehaviour
     
     private void OnEButton(InputValue value)
     {
-        if (_playerTouching)
+        if (_playerTouching && _gameSession != null)
         {
-            // Rehine kurtarıldı
+            _gameSession.SavedVillager();
             
-            // Objeyi 3 saniye sonra yok et
+            canvas.SetActive(true);
+            
+            pressEText.SetActive(false);
+            
             Destroy(gameObject, 3f);
         }
     }
