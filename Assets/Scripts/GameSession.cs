@@ -95,7 +95,7 @@ public class GameSession : MonoBehaviour
         
         livesText.text = playerLives.ToString();
     }
-    
+
     private void ResetSceneSession()
     {
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
