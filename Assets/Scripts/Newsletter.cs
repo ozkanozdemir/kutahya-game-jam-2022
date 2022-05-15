@@ -18,7 +18,7 @@ public class Newsletter : MonoBehaviour
     
     private void Awake()
     {
-        _audioSource = FindObjectOfType<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         _soundControllerAudioSource = GameObject.Find("SoundController").GetComponent<AudioSource>();
     }
 

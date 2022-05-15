@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'KURT''ULUS
+  m_text: '"KURT"ULUS
 
     DUMLUPINAR'
   m_isRightToLeft: 0

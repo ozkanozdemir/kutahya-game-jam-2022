@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019586637}
   - component: {fileID: 2019586636}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080090032}
   - component: {fileID: 2080090031}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 733507447}
   - component: {fileID: 733507448}
   - component: {fileID: 1966529754}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Newspaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 7260192579190568382}
   - component: {fileID: 7260192579190568376}
   - component: {fileID: 7260192579190568383}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 7260192579460367399}
   - component: {fileID: 7260192579460367398}
   - component: {fileID: 7260192579460367397}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 7260192579838870472}
   - component: {fileID: 7260192579838870474}
   - component: {fileID: 7260192579838870473}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 7260192580156158359}
   - component: {fileID: 7260192580156158353}
   - component: {fileID: 7260192580156158352}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
