@@ -12,6 +12,11 @@ public class SceneController : MonoBehaviour
 
     public void NextLevel()
     {
+        Invoke("GoToNextLevel", 2f);
+    }
+
+    private void GoToNextLevel()
+    {
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         var nextSceneIndex = currentSceneIndex + 1;
 
