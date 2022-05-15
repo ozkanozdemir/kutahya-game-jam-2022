@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997564164}
   - component: {fileID: 1997564165}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664355731338892530}
   - component: {fileID: 6734634150669903359}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapons_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 356066501}
   - component: {fileID: 356066498}
   - component: {fileID: 356066502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
