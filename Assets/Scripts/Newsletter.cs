@@ -48,19 +48,17 @@ public class Newsletter : MonoBehaviour
         {
             _canvasToggle = !_canvasToggle;
             canvas.SetActive(_canvasToggle);
-            if (_audioSource != null)
+            
+            if (_canvasToggle)
             {
-                if (_canvasToggle)
-                {
-                    _soundControllerAudioSource.volume = 0.3f;
-                    _audioSource.Play();
-                }
-                else
-                {
-                    _soundControllerAudioSource.volume = 1f;
-                    _audioSource.Stop();
-                }   
+                _soundControllerAudioSource.volume = 0.3f;
+                _audioSource.Play();
             }
+            else
+            {
+                _soundControllerAudioSource.volume = 1f;
+                _audioSource.Stop();
+            }   
         }
     }
 }
