@@ -11,10 +11,13 @@ public class EnemyBullet : MonoBehaviour
     public GameObject enemy;
     
     private float _xSpeed;
+
+    private GameSession _gameSession;
     
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _gameSession = FindObjectOfType<GameSession>();
     }
     
     private void Start()
@@ -32,6 +35,7 @@ public class EnemyBullet : MonoBehaviour
         if (col.tag.Equals("Player"))
         {
             Destroy(col.gameObject );
+            _gameSession.ProcessPlayerDeath();
         }
         
         if (!col.tag.Equals("Enemy") && !col.tag.Equals("Environments"))
