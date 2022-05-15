@@ -71,8 +71,8 @@ public class GameSession : MonoBehaviour
     
     public void AddToPowerUp(int value)
     {
-        powerUpAmount = Mathf.Max(powerUp - value, 0);
-
+        powerUpAmount = Mathf.Max(powerUpAmount - value, 0);
+        
         if (powerUpAmount <= 0)
         {
             _powerUpFull = true;

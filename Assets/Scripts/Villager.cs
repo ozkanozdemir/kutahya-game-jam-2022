@@ -10,12 +10,14 @@ public class Villager : MonoBehaviour
     [SerializeField] private GameObject canvas;
     
     private GameSession _gameSession;
+    private Animator _animator;
     
     private bool _playerTouching;
 
     private void Awake()
     {
         _gameSession = FindObjectOfType<GameSession>();
+        _animator = GetComponent<Animator>();
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -42,6 +44,7 @@ public class Villager : MonoBehaviour
         {
             _gameSession.SavedVillager();
             
+            _animator.SetInteger("Animate", 3);
             canvas.SetActive(true);
             
             pressEText.SetActive(false);
