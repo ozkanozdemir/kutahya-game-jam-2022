@@ -9289,7 +9289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 561414320622715651, guid: 54340503582c74fffa0b48c4bfc88d1f, type: 3}
       propertyPath: m_Volume
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 561414320622715651, guid: 54340503582c74fffa0b48c4bfc88d1f, type: 3}
       propertyPath: m_audioClip
@@ -9877,6 +9877,10 @@ PrefabInstance:
       propertyPath: pressEText
       value: 
       objectReference: {fileID: 1728444537}
+    - target: {fileID: 1966529754, guid: d8647af2dd37248c5823059c0f485593, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d820d21bb65448b29cdd95749dfd3e8, type: 3}
     - target: {fileID: 7260192578289874120, guid: d8647af2dd37248c5823059c0f485593, type: 3}
       propertyPath: m_RootOrder
       value: 4

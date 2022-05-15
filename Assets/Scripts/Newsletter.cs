@@ -11,13 +11,15 @@ public class Newsletter : MonoBehaviour
     [SerializeField] private GameObject pressEText;
 
     private AudioSource _audioSource;
+    private AudioSource _soundControllerAudioSource;
 
     private bool _playerTouching;
     private bool _canvasToggle;
-
+    
     private void Awake()
     {
         _audioSource = FindObjectOfType<AudioSource>();
+        _soundControllerAudioSource = GameObject.Find("SoundController").GetComponent<AudioSource>();
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -50,10 +52,12 @@ public class Newsletter : MonoBehaviour
             {
                 if (_canvasToggle)
                 {
+                    _soundControllerAudioSource.volume = 0.3f;
                     _audioSource.Play();
                 }
                 else
                 {
+                    _soundControllerAudioSource.volume = 1f;
                     _audioSource.Stop();
                 }   
             }
