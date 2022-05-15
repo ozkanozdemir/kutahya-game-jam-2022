@@ -65,7 +65,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!_isAlive) { return; }
 
+        if (!_gameSession.GetPowerUpFull()) { return; }
+
         GameObject bulletObject = Instantiate(bullet, gun.position, transform.rotation);
+        
+        _gameSession.SetPowerUpFull(false);
     } 
     
     private void OnMove(InputValue value)

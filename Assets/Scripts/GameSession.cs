@@ -16,7 +16,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] private TextMeshProUGUI powerUpText;
     [SerializeField] private Canvas canvas;
 
-    private bool _powerUpFulled;
+    private bool _powerUpFull;
 
     private void Awake()
     {
@@ -72,8 +72,29 @@ public class GameSession : MonoBehaviour
     public void AddToPowerUp(int value)
     {
         powerUpAmount = Mathf.Max(powerUp - value, 0);
+
+        if (powerUpAmount <= 0)
+        {
+            _powerUpFull = true;
+        }
+        
         powerUp += value;
         powerUpText.text = powerUp.ToString();
+    }
+
+    public bool GetPowerUpFull()
+    {
+        return _powerUpFull;
+    }
+    
+    public void SetPowerUpFull(bool value)
+    {
+        if (!value)
+        {
+            powerUpAmount = 3;
+        }
+        
+        _powerUpFull = value;
     }
 
     public void SavedVillager()
