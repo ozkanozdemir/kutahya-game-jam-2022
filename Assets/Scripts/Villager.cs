@@ -10,6 +10,7 @@ public class Villager : MonoBehaviour
     [SerializeField] private GameObject canvas;
     
     private GameSession _gameSession;
+    private LevelController _levelController;
     private Animator _animator;
     
     private bool _playerTouching;
@@ -18,6 +19,7 @@ public class Villager : MonoBehaviour
     private void Awake()
     {
         _gameSession = FindObjectOfType<GameSession>();
+        _levelController = FindObjectOfType<LevelController>();
         _animator = GetComponent<Animator>();
     }
 
@@ -45,6 +47,8 @@ public class Villager : MonoBehaviour
         {
             _isSaved = true;
             _gameSession.SavedVillager();
+            
+            _levelController.SaveVillager();
             
             _animator.SetInteger("Animate", 3);
             canvas.SetActive(true);
