@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class GameSession : MonoBehaviour
     [SerializeField] private int score;
     [SerializeField] private int powerUp;
     [SerializeField] private TextMeshProUGUI livesText;
-    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI powerUpText;
+    [SerializeField] private Slider powerUpSlider;
     [SerializeField] private Canvas canvas;
 
     private bool _powerUpFull;
@@ -35,8 +36,13 @@ public class GameSession : MonoBehaviour
     private void Start()
     {
         // livesText.text = playerLives.ToString();
-        scoreText.text = score.ToString();
         powerUpText.text = powerUp.ToString();
+        powerUpSlider.maxValue = powerUpAmount;
+        UpdateSliderValue();
+    }
+    
+    private void UpdateSliderValue() {
+        powerUpSlider.value = 3 - powerUpAmount;
     }
 
     private void Update()
@@ -66,7 +72,7 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int pointsToAdd)
     {
         score += pointsToAdd;
-        scoreText.text = score.ToString();
+        powerUpText.text = score.ToString();
     }
     
     public void AddToPowerUp(int value)
@@ -80,6 +86,7 @@ public class GameSession : MonoBehaviour
         
         powerUp += value;
         powerUpText.text = powerUp.ToString();
+        UpdateSliderValue();
     }
 
     public bool GetPowerUpFull()
@@ -92,6 +99,7 @@ public class GameSession : MonoBehaviour
         if (!value)
         {
             powerUpAmount = 3;
+            UpdateSliderValue();
         }
         
         _powerUpFull = value;
@@ -105,7 +113,7 @@ public class GameSession : MonoBehaviour
     public void ResetScore()
     {
         score += 0;
-        scoreText.text = score.ToString();
+        powerUpText.text = powerUp.ToString();
     }
     
     private void TakeLife()
@@ -128,8 +136,7 @@ public class GameSession : MonoBehaviour
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         score = 0;
         powerUp = 0;
-        scoreText.text = score.ToString();
-        scoreText.text = powerUp.ToString();
+        powerUpText.text = powerUp.ToString();
         
         SceneManager.LoadScene(0);
         Destroy(gameObject);

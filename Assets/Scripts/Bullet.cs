@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log(col.tag);
         if (col.tag.Equals("Enemy"))
         {
             Destroy(col.gameObject );
@@ -39,7 +40,7 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Enemy"))
         {
-            Destroy(gameObject);   
+            Destroy(col.gameObject);
         }
     }
 }

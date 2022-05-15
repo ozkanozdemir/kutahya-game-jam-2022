@@ -13,6 +13,7 @@ public class Villager : MonoBehaviour
     private Animator _animator;
     
     private bool _playerTouching;
+    private bool _isSaved;
 
     private void Awake()
     {
@@ -40,8 +41,9 @@ public class Villager : MonoBehaviour
     
     private void OnEButton(InputValue value)
     {
-        if (_playerTouching && _gameSession != null)
+        if (_playerTouching && _gameSession != null && !_isSaved)
         {
+            _isSaved = true;
             _gameSession.SavedVillager();
             
             _animator.SetInteger("Animate", 3);
