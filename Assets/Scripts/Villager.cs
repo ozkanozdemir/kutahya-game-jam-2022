@@ -55,7 +55,7 @@ public class Villager : MonoBehaviour
             
             pressEText.SetActive(false);
             
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 2f);
         }
     }
 }

@@ -91,6 +91,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnRestart()
+    {
+        _gameSession.ProcessPlayerDeath();
+    }
+
     private void Run()
     {
         Vector2 playerVelocity = new Vector2(_moveInput.x * runSpeed, _rigidbody.velocity.y);
