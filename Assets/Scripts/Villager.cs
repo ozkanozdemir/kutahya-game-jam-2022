@@ -28,7 +28,9 @@ public class Villager : MonoBehaviour
         if (col.tag.Equals("Player"))
         {
             _playerTouching = true;
-            pressEText.SetActive(true);
+            // pressEText.SetActive(true);
+            
+            SaveTheVillager();
         }
     }
 
@@ -37,11 +39,16 @@ public class Villager : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             _playerTouching = false;
-            pressEText.SetActive(false);
+            // pressEText.SetActive(false);
         }
     }
     
     private void OnEButton(InputValue value)
+    {
+        SaveTheVillager();
+    }
+
+    private void SaveTheVillager()
     {
         if (_playerTouching && _gameSession != null && !_isSaved)
         {
