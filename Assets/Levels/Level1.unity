@@ -9840,5 +9840,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper
       objectReference: {fileID: 0}
+    - target: {fileID: 7260192579460367387, guid: d8647af2dd37248c5823059c0f485593, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8647af2dd37248c5823059c0f485593, type: 3}

@@ -22,15 +22,21 @@ public class Villager : MonoBehaviour
         _levelController = FindObjectOfType<LevelController>();
         _animator = GetComponent<Animator>();
     }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SaveTheVillager();
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.tag.Equals("Player"))
         {
             _playerTouching = true;
-            // pressEText.SetActive(true);
-            
-            SaveTheVillager();
+            pressEText.SetActive(true);
         }
     }
 
@@ -39,7 +45,7 @@ public class Villager : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             _playerTouching = false;
-            // pressEText.SetActive(false);
+            pressEText.SetActive(false);
         }
     }
     

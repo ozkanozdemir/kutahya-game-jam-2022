@@ -22,6 +22,14 @@ public class Newsletter : MonoBehaviour
         _soundControllerAudioSource = GameObject.Find("SoundController").GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ToggleNewspaper();
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.tag.Equals("Player"))
@@ -43,6 +51,11 @@ public class Newsletter : MonoBehaviour
     }
     
     private void OnEButton(InputValue value)
+    {
+        ToggleNewspaper();
+    }
+
+    private void ToggleNewspaper()
     {
         if (_playerTouching)
         {
